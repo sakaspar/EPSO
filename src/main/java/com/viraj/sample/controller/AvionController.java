@@ -35,7 +35,7 @@ public class AvionController {
     }
 
     @PutMapping("/update/{avionId}")
-    public Avion updateAvion(@RequestBody Avion avion,@PathVariable(name = "avionId") Long avionId) {
+    public Avion updateAvion(@RequestBody Avion avion,@PathVariable(name = "avionId") Integer avionId) {
         Avion existing=this.avionService.getAvion(avionId);
         existing.setAvionName(avion.getAvionName());
         existing.setAvionMarque(avion.getAvionMarque());
@@ -50,12 +50,12 @@ public class AvionController {
     }
 
     @GetMapping("/getone/{avionId}")
-    public Avion getAvion(@PathVariable(name = "avionId") Long avionId) {
+    public Avion getAvion(@PathVariable(name = "avionId") Integer avionId) {
         return avionService.getAvion(avionId);
     }
 
     @DeleteMapping("/delete/{avionId}")
-    public void deleteAvion(@PathVariable(name = "avionId") Long avionId) {
+    public void deleteAvion(@PathVariable(name = "avionId") Integer avionId) {
         avionService.deleteAvion(avionId);
     }
 }

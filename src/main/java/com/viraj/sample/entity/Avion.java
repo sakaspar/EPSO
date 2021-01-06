@@ -17,7 +17,7 @@ public class Avion {
       @Id
     @Column(name = "AVION_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long avionId;
+    private Integer avionId;
 
     @Column(name = "AVION_NAME")
     private String avionName;
@@ -36,7 +36,9 @@ public class Avion {
         this.avionMarque = avionMarque;
         this.avionNbrP= avionNbrP;
     }
-
+    public Integer getAvionId(){
+        return avionId;
+    }
     public String getAvionName() {
         return avionName;
     }

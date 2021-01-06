@@ -33,9 +33,12 @@ public class CompagnieController {
         return compagnieService.saveCompagnie(compagnie);
     }
 
-    @PutMapping("/update")
-    public Compagnie updateCompagnie(@RequestBody Compagnie compagnie) {
-        return compagnieService.updateCompagnie(compagnie);
+    @PutMapping("/update/{compagnieId}")
+    public Compagnie updateCompagnie(@RequestBody Compagnie compagnie ,@PathVariable(name = "compagnieId") Integer compagnieId) {
+        Compagnie existing=this.compagnieService.getCompagnie(compagnieId);
+        existing.setCompagnieName(compagnie.getCompagnieName());
+        existing.setCompagniePays(compagnie.getCompagniePays());
+        return this.compagnieService.saveCompagnie(existing);
     }
 
     @GetMapping("/getall")

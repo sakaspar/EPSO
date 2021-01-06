@@ -29,12 +29,12 @@ public class AvionServiceImpl implements AvionService {
     }
 
     @Override
-    public Avion getAvion(Long avionId) {
+    public Avion getAvion(Integer avionId) {
         return avionRepository.findById(avionId).get();
     }
 
     @Override
-    public void deleteAvion(Long avionId) {
+    public void deleteAvion(Integer avionId) {
         avionRepository.deleteById(avionId);
     }
 }

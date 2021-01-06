@@ -9,6 +9,6 @@ public interface AvionService {
     Avion saveAvion(Avion avion);
     Avion updateAvion(Avion avion);
     List<Avion> getAllAvions();
-    Avion getAvion(Long avionId);
-    void deleteAvion(Long avionId);
+    Avion getAvion(Integer avionId);
+    void deleteAvion(Integer avionId);
 }
